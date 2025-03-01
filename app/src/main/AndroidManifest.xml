@@ -25,7 +25,8 @@
         <!-- Home Activity -->
         <activity
             android:name=".Home"
-            android:exported="true" >
+            android:exported="true"
+            android:label="">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->

@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">MedInfo</string>
+    <string name="image_desc">MedInfo logo</string>
+
+    <string name="on_text1">Bookmark frequently used medicines, view your search history, and keep track of important medical details</string>
+    <string name="on_title1">Easily Save &amp; Track Your Medicines</string>
+
+    <string name="on_title2">Check if your medicines interact negatively with other drugs, alcohol, or food before consuming them.</string>
+    <string name="on_text2">Avoid Harmful Drug Interactions</string>
+
+    <string name="on_title3">Easily discover cheaper or alternative medicines with the same active ingredients to save money.</string>
+    <string name="on_text3">Discover Cost-Effective Medicine Options</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="title_activity_home">home</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+    <string name="hello">HELLO, Sandy</string>
+
+    <string name="rectangle_1_desc">Rectangle 1</string>
+    <string name="rectangle_2_desc">Rectangle 2</string>
+    <string name="rectangle_3_desc">Rectangle 3</string>
+    <string name="rectangle_4_desc">Rectangle 4</string>
+    <string name="title_search">Search</string>
+    <string name="title_reminder">Reminder</string>
+    <string name="title_profile">User Profile\n</string>
+
+</resources>

@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/secondaryColor"
+    tools:context=".ui.home.HomeFragment">
+
+    <!-- Top Bar -->
+    <LinearLayout
+        android:id="@+id/linear01"
+        android:layout_width="413dp"
+        android:layout_height="65dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/greetingText"
+            android:layout_width="369dp"
+            android:layout_height="50dp"
+            android:text="HELLO, Sandy"
+            android:textAlignment="center"
+            android:textColor="@color/green"
+            android:textSize="30dp"
+            android:textStyle="bold"
+            tools:ignore="HardcodedText,SpUsage" />
+    </LinearLayout>
+
+    <!-- Action Buttons -->
+    <GridLayout
+        android:id="@+id/actionButtons"
+        android:layout_width="313dp"
+        android:layout_height="346dp"
+        android:columnCount="2"
+        android:padding="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear01">
+
+        <Button
+            android:id="@+id/setReminderButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button"
+            android:text="Set Reminders"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/searchMedicineButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button"
+            android:text="Search Medicine"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/searchHistoryButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button"
+            android:text="Search History"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/userProfileButton"
+            android:layout_width="0dp"
+            android:layout_height="150dp"
+            android:layout_columnWeight="1"
+            android:layout_margin="8dp"
+            android:background="@drawable/rounded_button"
+            android:text="User Profile"
+            tools:ignore="HardcodedText" />
+    </GridLayout>
+
+    <!-- Reminders Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/remindersSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/actionButtons">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Today's Reminders"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="At 1.30 p.m.\nAt 9.30 p.m."
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Health Tips Section -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/healthTipsSection"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp"
+        app:layout_constraintTop_toBottomOf="@id/remindersSection">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latest Health Tips"
+                android:textColor="@color/green"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Stay Hydrated"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Drink at least 8 glasses of water daily..."
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- Bottom Navigation Bar -->
+
+</androidx.constraintlayout.widget.ConstraintLayout>

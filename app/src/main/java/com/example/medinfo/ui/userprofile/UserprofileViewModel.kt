@@ -1,10 +1,10 @@
-package com.example.medinfo.ui.home
+package com.example.medinfo.ui.userprofile
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class HomeViewModel : ViewModel() {
+class UserprofileViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
         value = ""

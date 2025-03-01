@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,8 +11,8 @@
     <!-- Top Bar -->
     <LinearLayout
         android:id="@+id/linear01"
-        android:layout_width="413dp"
-        android:layout_height="65dp"
+        android:layout_width="408dp"
+        android:layout_height="69dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
         android:padding="16dp"
@@ -20,12 +21,12 @@
 
         <TextView
             android:id="@+id/greetingText"
-            android:layout_width="369dp"
+            android:layout_width="394dp"
             android:layout_height="50dp"
             android:text="HELLO, Sandy"
             android:textAlignment="center"
-            android:textColor="@color/green"
-            android:textSize="30dp"
+            android:textColor="#32288A"
+            android:textSize="35sp"
             android:textStyle="bold"
             tools:ignore="HardcodedText,SpUsage" />
     </LinearLayout>
@@ -33,53 +34,124 @@
     <!-- Action Buttons -->
     <GridLayout
         android:id="@+id/actionButtons"
-        android:layout_width="313dp"
-        android:layout_height="346dp"
+        android:layout_width="0dp"
+        android:layout_height="351dp"
         android:columnCount="2"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/linear01">
-
-        <Button
-            android:id="@+id/setReminderButton"
+        app:layout_constraintTop_toBottomOf="@+id/linear01">
+        <!-- Search Medicine Button -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_button"
-            android:text="Set Reminders"
-            tools:ignore="HardcodedText" />
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/searchMedicineButton"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="search_medicine_icon"
+                android:src="@drawable/search" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Search Medicine"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_primary20"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- Set Reminders Button -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_button"
-            android:text="Search Medicine"
-            tools:ignore="HardcodedText" />
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/searchHistoryButton"
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="set_reminder_icon"
+                android:src="@drawable/reminder" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Set Reminders"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_primary20"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+
+        <!-- Search History Button -->
+        <LinearLayout
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_button"
-            android:text="Search History"
-            tools:ignore="HardcodedText" />
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <Button
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="search_history_icon"
+                android:src="@drawable/group_15" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:text="Search History"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_primary20"
+                android:textSize="18sp" />
+        </LinearLayout>
+
+        <!-- User Profile Button -->
+        <LinearLayout
             android:id="@+id/userProfileButton"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
             android:layout_margin="8dp"
             android:background="@drawable/rounded_button"
-            android:text="User Profile"
-            tools:ignore="HardcodedText" />
+            android:clickable="true"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="user_profile_icon"
+                android:src="@drawable/li_user1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="User  Profile"
+                android:textAlignment="center"
+                android:textColor="@color/material_dynamic_primary20"
+                android:textSize="18sp" />
+        </LinearLayout>
     </GridLayout>
 
     <!-- Reminders Section -->
@@ -88,9 +160,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="#DCFBF5"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/actionButtons">
+        app:layout_constraintTop_toBottomOf="@id/actionButtons"
+        tools:layout_editor_absoluteX="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -104,15 +178,13 @@
                 android:text="Today's Reminders"
                 android:textColor="@color/green"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="At 1.30 p.m.\nAt 9.30 p.m."
-                android:textSize="14sp"
-                tools:ignore="HardcodedText" />
+                android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -122,9 +194,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:backgroundTint="#DCFBF5"
         app:cardCornerRadius="16dp"
         app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/remindersSection">
+        app:layout_constraintTop_toBottomOf="@id/remindersSection"
+        tools:layout_editor_absoluteX="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -138,26 +212,22 @@
                 android:text="Latest Health Tips"
                 android:textColor="@color/green"
                 android:textSize="16sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Stay Hydrated"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                tools:ignore="HardcodedText" />
+                android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Drink at least 8 glasses of water daily..."
-                android:textSize="14sp"
-                tools:ignore="HardcodedText" />
+                android:textSize="14sp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <!-- Bottom Navigation Bar -->
-
 </androidx.constraintlayout.widget.ConstraintLayout>

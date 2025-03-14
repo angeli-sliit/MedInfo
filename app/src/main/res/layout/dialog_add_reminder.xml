@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/medicine_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Medicine Name" />
+
+    <EditText
+        android:id="@+id/reminder_time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Time (e.g., 10:00 AM)" />
+
+    <EditText
+        android:id="@+id/dosage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Dosage (e.g., 1 tablet)" />
+</LinearLayout>

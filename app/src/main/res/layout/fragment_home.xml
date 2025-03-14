@@ -5,13 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/secondaryColor"
+    android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
 
+        <!-- Your existing ConstraintLayout or LinearLayout goes here -->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
     <!-- Top Bar -->
     <LinearLayout
         android:id="@+id/linear01"
-        android:layout_width="408dp"
+        android:layout_width="match_parent"
         android:layout_height="69dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
@@ -21,8 +32,8 @@
 
         <TextView
             android:id="@+id/greetingText"
-            android:layout_width="394dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="HELLO, Sandy"
             android:textAlignment="center"
             android:textColor="#32288A"
@@ -35,14 +46,16 @@
     <GridLayout
         android:id="@+id/actionButtons"
         android:layout_width="0dp"
-        android:layout_height="351dp"
+        android:layout_height="wrap_content"
         android:columnCount="2"
         android:padding="8dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linear01">
+
         <!-- Search Medicine Button -->
         <LinearLayout
+            android:id="@+id/searchButton"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -71,6 +84,7 @@
 
         <!-- Set Reminders Button -->
         <LinearLayout
+            android:id="@+id/reminderButton"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -97,9 +111,9 @@
                 android:textSize="18sp" />
         </LinearLayout>
 
-
         <!-- Search History Button -->
         <LinearLayout
+            android:id="@+id/searchHistoryButton"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -128,7 +142,7 @@
 
         <!-- User Profile Button -->
         <LinearLayout
-            android:id="@+id/userProfileButton"
+            android:id="@+id/profileButton"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:layout_columnWeight="1"
@@ -173,6 +187,7 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/today_reminders_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Today's Reminders"
@@ -180,11 +195,12 @@
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reminders_section"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="At 1.30 p.m.\nAt 9.30 p.m."
-                android:textSize="14sp" />
+                android:layout_marginTop="8dp"
+                tools:listitem="@layout/item_reminder" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
@@ -207,27 +223,27 @@
             android:padding="16dp">
 
             <TextView
+                android:id="@+id/healthTipContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Latest Health Tips"
+                android:text="Health tip"
                 android:textColor="@color/green"
                 android:textSize="16sp"
                 android:textStyle="bold" />
-
             <TextView
+                android:id="@+id/health_tip_text_view"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Stay Hydrated"
-                android:textSize="14sp"
+                android:text="Latest Health Tips"
+
+                android:textSize="16sp"
                 android:textStyle="bold" />
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Drink at least 8 glasses of water daily..."
-                android:textSize="14sp" />
+
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
     <!-- Bottom Navigation Bar -->
+</androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

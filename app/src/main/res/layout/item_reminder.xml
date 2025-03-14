@@ -1,0 +1,54 @@
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="8dp"
+    android:background="@drawable/rounded_item_background">
+
+    <!-- Medicine Name -->
+    <TextView
+        android:id="@+id/medicine_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Medicine Name"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/reminder_time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/medicine_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Dosage -->
+    <TextView
+        android:id="@+id/dosage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Dosage"
+        android:textSize="14sp"
+        android:textColor="@color/gray"
+        app:layout_constraintTop_toBottomOf="@id/reminder_time"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Delete Button -->
+    <Button
+        android:id="@+id/delete_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Delete"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@id/dosage"
+        app:layout_constraintEnd_toEndOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

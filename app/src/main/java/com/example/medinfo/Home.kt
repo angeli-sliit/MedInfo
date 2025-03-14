@@ -5,7 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
+import androidx.navigation.ui.setupWithNavController
 import com.example.medinfo.databinding.ActivityHomeBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class Home : AppCompatActivity() {
 
@@ -23,28 +25,19 @@ class Home : AppCompatActivity() {
         // Initialize the NavController
         val navController = findNavController(R.id.nav_host_fragment_activity_home)
 
-        // Set up the AppBarConfiguration
+        // Set up the AppBarConfiguration with the top-level destinations
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_profile
+                R.id.navigation_home, // Home
+                R.id.navigation_search, // Search
+                R.id.navigation_reminder, // Reminder
+                R.id.navigation_profile // Profile
             )
         )
 
         // Link the NavController with the toolbar and bottom navigation
         setupActionBarWithNavController(navController, appBarConfiguration)
-        binding.navView.setOnNavigationItemSelectedListener { item ->
-            when (item.itemId) {
-                R.id.navigation_home -> {
-                    findNavController(R.id.nav_host_fragment_activity_home).navigate(R.id.navigation_home)
-                    true
-                }
-                R.id.navigation_profile -> {
-                    findNavController(R.id.nav_host_fragment_activity_home).navigate(R.id.navigation_profile)
-                    true
-                }
-                else -> false
-            }
-        }
+        binding.navView.setupWithNavController(navController)
     }
 
     override fun onSupportNavigateUp(): Boolean {

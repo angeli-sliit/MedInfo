@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -55,6 +56,7 @@ dependencies {
     // Lifecycle components
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.8.1")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.1")
+    implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.8.1")
 
     // Navigation components
     implementation("androidx.navigation:navigation-fragment-ktx:2.8.8")
@@ -74,5 +76,13 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.4.0")
     androidTestImplementation("androidx.compose.ui:ui-test-junit4:1.5.1")
     debugImplementation("androidx.compose.ui:ui-tooling:1.5.1")
-    implementation ("com.google.android.material:material:1.10.0")
+
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+
+    implementation("androidx.room:room-runtime:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+
+
 }

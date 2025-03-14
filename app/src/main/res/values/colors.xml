@@ -15,4 +15,5 @@
     <color name="surfaceColor">#FFFFFF</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
+    <color name="gray">#696969</color>
 </resources>

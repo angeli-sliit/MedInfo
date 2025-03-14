@@ -1,20 +1,60 @@
-<?xml version="1.0" encoding="utf-8"?>
+<!--suppress NavigationFile, NavigationFile -->
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation_graph"
     app:startDestination="@id/navigation_home">
 
+    <!-- Home Fragment -->
     <fragment
         android:id="@+id/navigation_home"
         android:name="com.example.medinfo.ui.home.HomeFragment"
-        tools:layout="@layout/fragment_home" />
+        android:label="Home"
+        tools:layout="@layout/fragment_home">
 
+        <!-- Actions to navigate to other fragments -->
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_search"
+            app:destination="@id/navigation_search" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_reminder"
+            app:destination="@id/navigation_reminder" />
+        <action
+            android:id="@+id/action_navigation_home_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
+
+    <!-- Search Fragment -->
+    <fragment
+        android:id="@+id/navigation_search"
+        android:name="com.example.medinfo.ui.search.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+
+        <!-- Action to navigate to Medicine Details -->
+        <action
+            android:id="@+id/action_navigation_search_to_navigation_medicine_details"
+            app:destination="@id/navigation_medicine_details" />
+    </fragment>
+
+    <!-- Medicine Details Fragment -->
+    <fragment
+        android:id="@+id/navigation_medicine_details"
+        android:name="com.example.medinfo.ui.medicine.MedicineDetailsFragment"
+        android:label="Medicine Details"
+        tools:layout="@layout/fragment_medicine_details" />
+
+    <!-- Reminder Fragment -->
+    <fragment
+        android:id="@+id/navigation_reminder"
+        android:name="com.example.medinfo.ui.reminder.ReminderFragment"
+        android:label="Reminder"
+        tools:layout="@layout/fragment_reminder" />
+
+    <!-- Profile Fragment -->
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.example.medinfo.ui.userprofile.UserProfileFragment"
+        android:label="Profile"
         tools:layout="@layout/fragment_user_profile" />
-
-    <action
-        android:id="@+id/action_navigation_home_to_navigation_profile"
-        app:destination="@id/navigation_profile" />
 </navigation>

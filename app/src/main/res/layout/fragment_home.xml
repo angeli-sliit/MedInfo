@@ -7,243 +7,238 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     tools:context=".ui.home.HomeFragment">
+
     <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:fillViewport="true">
 
-        <!-- Your existing ConstraintLayout or LinearLayout goes here -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-    <!-- Top Bar -->
-    <LinearLayout
-        android:id="@+id/linear01"
-        android:layout_width="match_parent"
-        android:layout_height="69dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="16dp"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
 
-        <TextView
-            android:id="@+id/greetingText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="HELLO, Sandy"
-            android:textAlignment="center"
-            android:textColor="#32288A"
-            android:textSize="35sp"
-            android:textStyle="bold"
-            tools:ignore="HardcodedText,SpUsage" />
-    </LinearLayout>
+            <!-- Top Bar -->
+            <LinearLayout
+                android:id="@+id/linear01"
+                android:layout_width="match_parent"
+                android:layout_height="69dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:ignore="MissingConstraints">
 
-    <!-- Action Buttons -->
-    <GridLayout
-        android:id="@+id/actionButtons"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:columnCount="2"
-        android:padding="8dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linear01">
+                <TextView
+                    android:id="@+id/greetingText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="HELLO, Sandy"
+                    android:textAlignment="center"
+                    android:textColor="#32288A"
+                    android:textSize="35sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,SpUsage" />
+            </LinearLayout>
 
-        <!-- Search Medicine Button -->
-        <LinearLayout
-            android:id="@+id/searchButton"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:background="@drawable/rounded_button"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical">
-
-            <ImageView
-                android:layout_width="wrap_content"
+            <!-- Action Buttons -->
+            <GridLayout
+                android:id="@+id/actionButtons"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:clickable="true"
-                android:contentDescription="search_medicine_icon"
-                android:src="@drawable/search" />
+                android:columnCount="2"
+                android:padding="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/linear01">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="Search Medicine"
-                android:textAlignment="center"
-                android:textColor="@color/material_dynamic_primary20"
-                android:textSize="18sp" />
-        </LinearLayout>
+                <!-- Search Medicine Button -->
+                <LinearLayout
+                    android:id="@+id/searchButton"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-        <!-- Set Reminders Button -->
-        <LinearLayout
-            android:id="@+id/reminderButton"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:background="@drawable/rounded_button"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:contentDescription="search_medicine_icon"
+                        android:src="@drawable/search" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:contentDescription="set_reminder_icon"
-                android:src="@drawable/reminder" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="Search Medicine"
+                        android:textAlignment="center"
+                        android:textColor="@color/material_dynamic_primary20"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="Set Reminders"
-                android:textAlignment="center"
-                android:textColor="@color/material_dynamic_primary20"
-                android:textSize="18sp" />
-        </LinearLayout>
+                <!-- Set Reminders Button -->
+                <LinearLayout
+                    android:id="@+id/reminderButton"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-        <!-- Search History Button -->
-        <LinearLayout
-            android:id="@+id/searchHistoryButton"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:background="@drawable/rounded_button"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:contentDescription="set_reminder_icon"
+                        android:src="@drawable/reminder" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:contentDescription="search_history_icon"
-                android:src="@drawable/group_15" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="Set Reminders"
+                        android:textAlignment="center"
+                        android:textColor="@color/material_dynamic_primary20"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:text="Search History"
-                android:textAlignment="center"
-                android:textColor="@color/material_dynamic_primary20"
-                android:textSize="18sp" />
-        </LinearLayout>
+                <!-- Search History Button -->
+                <LinearLayout
+                    android:id="@+id/searchHistoryButton"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-        <!-- User Profile Button -->
-        <LinearLayout
-            android:id="@+id/profileButton"
-            android:layout_width="0dp"
-            android:layout_height="150dp"
-            android:layout_columnWeight="1"
-            android:layout_margin="8dp"
-            android:background="@drawable/rounded_button"
-            android:clickable="true"
-            android:gravity="center"
-            android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:contentDescription="search_history_icon"
+                        android:src="@drawable/group_15" />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:contentDescription="user_profile_icon"
-                android:src="@drawable/li_user1" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:clickable="true"
+                        android:text="Search History"
+                        android:textAlignment="center"
+                        android:textColor="@color/material_dynamic_primary20"
+                        android:textSize="18sp" />
+                </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="User  Profile"
-                android:textAlignment="center"
-                android:textColor="@color/material_dynamic_primary20"
-                android:textSize="18sp" />
-        </LinearLayout>
-    </GridLayout>
+                <!-- User Profile Button -->
+                <LinearLayout
+                    android:id="@+id/profileButton"
+                    android:layout_width="0dp"
+                    android:layout_height="150dp"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/rounded_button"
+                    android:clickable="true"
+                    android:gravity="center"
+                    android:orientation="vertical">
 
-    <!-- Reminders Section -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/remindersSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:backgroundTint="#DCFBF5"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/actionButtons"
-        tools:layout_editor_absoluteX="16dp">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:contentDescription="user_profile_icon"
+                        android:src="@drawable/li_user1" />
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="User Profile"
+                        android:textAlignment="center"
+                        android:textColor="@color/material_dynamic_primary20"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </GridLayout>
 
-            <TextView
-                android:id="@+id/today_reminders_title"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Today's Reminders"
-                android:textColor="@color/green"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/reminders_section"
+            <!-- Health Tips Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/healthTipsSection"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                tools:listitem="@layout/item_reminder" />
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                android:layout_margin="16dp"
+                android:backgroundTint="#DCFBF5"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/actionButtons"
+                tools:layout_editor_absoluteX="16dp">
 
-    <!-- Health Tips Section -->
-    <androidx.cardview.widget.CardView
-        android:id="@+id/healthTipsSection"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:backgroundTint="#DCFBF5"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="4dp"
-        app:layout_constraintTop_toBottomOf="@id/remindersSection"
-        tools:layout_editor_absoluteX="16dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+                    <TextView
+                        android:id="@+id/healthTipContent"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Health Tip"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/healthTipContent"
-                android:layout_width="wrap_content"
+                    <TextView
+                        android:id="@+id/health_tip_text_view"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Latest Health Tips"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Reminders Section -->
+            <androidx.cardview.widget.CardView
+                android:id="@+id/remindersSection"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Health tip"
-                android:textColor="@color/green"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-            <TextView
-                android:id="@+id/health_tip_text_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Latest Health Tips"
+                android:layout_margin="16dp"
+                android:backgroundTint="#DCFBF5"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:layout_constraintTop_toBottomOf="@id/healthTipsSection"
+                tools:layout_editor_absoluteX="16dp">
 
-                android:textSize="16sp"
-                android:textStyle="bold" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
+                    <TextView
+                        android:id="@+id/today_reminders_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Today's Reminders"
+                        android:textColor="@color/green"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
 
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/reminders_section"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        tools:listitem="@layout/item_reminder" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-    <!-- Bottom Navigation Bar -->
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

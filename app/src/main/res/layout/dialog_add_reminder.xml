@@ -9,17 +9,20 @@
         android:id="@+id/medicine_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Medicine Name" />
+        android:hint="Medicine Name"
+        android:minHeight="48dp"/>
 
     <EditText
         android:id="@+id/reminder_time"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Time (e.g., 10:00 AM)" />
+        android:hint="Time (e.g., 10:00 AM)"
+        android:minHeight="48dp"/>
 
     <EditText
         android:id="@+id/dosage"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Dosage (e.g., 1 tablet)" />
+        android:hint="Dosage (e.g., 1 tablet)"
+        android:minHeight="48dp"/>
 </LinearLayout>

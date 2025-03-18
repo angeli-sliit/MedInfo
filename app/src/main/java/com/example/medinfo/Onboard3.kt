@@ -1,6 +1,5 @@
 package com.example.medinfo
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
@@ -24,11 +23,6 @@ class Onboard3 : AppCompatActivity() {
         // Find the button and set an OnClickListener
         val nextButton = findViewById<Button>(R.id.button1)
         nextButton.setOnClickListener {
-            // Mark onboarding as complete
-            val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
-            sharedPreferences.edit().putBoolean("OnboardingComplete", true).apply()
-
-            // Navigate to Home
             val intent = Intent(this, Home::class.java)
             intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)

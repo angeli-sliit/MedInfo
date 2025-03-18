@@ -9,5 +9,5 @@ data class InteractionTypeGroup(
 )
 
 data class InteractionType(
-    val description: String
+    val description: String?
 )

@@ -2,11 +2,16 @@ package com.example.medinfo.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.Menu
+import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.core.view.MenuProvider
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,10 +28,14 @@ class HomeFragment : Fragment() {
     private lateinit var adapter: ReminderAdapter
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
         val view = inflater.inflate(R.layout.fragment_home, container, false)
+        return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
 
         // RecyclerView setup for today's reminders
         val recyclerView = view.findViewById<RecyclerView>(R.id.reminders_section)
@@ -44,12 +53,6 @@ class HomeFragment : Fragment() {
         reminderViewModel.allReminders.observe(viewLifecycleOwner, { reminders ->
             reminders?.let { adapter.setReminders(it) }
         })
-
-        return view
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         // Display a random health tip
         val healthTipTextView = view.findViewById<TextView>(R.id.health_tip_text_view)
@@ -71,11 +74,39 @@ class HomeFragment : Fragment() {
         }
 
         searchHistoryButton.setOnClickListener {
-            findNavController().navigate(R.id.navigation_search)
+            findNavController().navigate(R.id.navigation_search_history)
         }
 
         profileButton.setOnClickListener {
             findNavController().navigate(R.id.navigation_profile)
         }
+
+        // Add a MenuProvider to handle the options menu
+        requireActivity().addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                menuInflater.inflate(R.menu.bottom_nav_menu, menu)
+            }
+
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                return when (menuItem.itemId) {
+                    R.id.navigation_home -> {
+                        // Navigate to Home
+                        findNavController().navigate(R.id.navigation_home)
+                        true
+                    }
+                    R.id.navigation_search -> {
+                        // Navigate to Search
+                        findNavController().navigate(R.id.navigation_search)
+                        true
+                    }
+                    R.id.action_sign_out -> {
+                        // Sign out and close the app
+                        activity?.finish() // Close the current activity
+                        true
+                    }
+                    else -> false
+                }
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
     }
 }

@@ -1,8 +1,8 @@
 package com.example.medinfo
 
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -12,20 +12,13 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
+        enableEdgeToEdge() // To enable edge-to-edge UI on supported devices
         setContentView(R.layout.activity_main)
 
-        // Check if onboarding is complete
-        val sharedPreferences = getSharedPreferences("AppPreferences", Context.MODE_PRIVATE)
-        val isOnboardingComplete = sharedPreferences.getBoolean("OnboardingComplete", false)
-
-        if (!isOnboardingComplete) {
-            // Navigate to Onboard1
+        // Find the button by its ID
+        val getStartedButton = findViewById<Button>(R.id.button)
+        getStartedButton.setOnClickListener {
             val intent = Intent(this, Onboard1::class.java)
-            startActivity(intent)
-        } else {
-            // Navigate to Home
-            val intent = Intent(this, Home::class.java)
             startActivity(intent)
         }
 

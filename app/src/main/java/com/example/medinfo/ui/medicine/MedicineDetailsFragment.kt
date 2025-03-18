@@ -10,13 +10,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.medinfo.databinding.FragmentMedicineDetailsBinding
 import com.example.medinfo.network.RetrofitInstance
 import kotlinx.coroutines.launch
-import com.example.medinfo.model.RxCuiResponse
 import com.example.medinfo.model.InteractionResponse
-import com.example.medinfo.model.FdaResponse
-import com.example.medinfo.model.Medicine
 import com.example.medinfo.model.MedicineDetails
-import retrofit2.Call
-import retrofit2.Callback
 import retrofit2.Response
 
 class MedicineDetailsFragment : Fragment() {
@@ -48,28 +43,17 @@ class MedicineDetailsFragment : Fragment() {
     private fun fetchMedicineDetails(id: String) {
         lifecycleScope.launch {
             try {
-                val details = RetrofitInstance.api.getMedicineDetails(id)
-                binding.medicineName.text = details.name
-                binding.useCases.text = details.uses
-                binding.ingredients.text = details.ingredients.joinToString(", ")
-                binding.sideEffects.text = details.sideEffects.joinToString(", ")
-
-                // Optionally, fetch drug interactions or warnings here
-                val interactionsCall = RetrofitInstance.api.getDrugInteractions(id)
-                interactionsCall.enqueue(object : Callback<InteractionResponse> {
-                    override fun onResponse(call: Call<InteractionResponse>, response: Response<InteractionResponse>) {
-                        if (response.isSuccessful) {
-                            // Handle interactions response
-                            Log.d("Interactions", "Interactions for $id: ${response.body()}")
-                        }
-                    }
-
-                    override fun onFailure(call: Call<InteractionResponse>, t: Throwable) {
-                        Log.e("Interactions", "API Error: ${t.message}")
-                    }
-                })
+                val response: Response<MedicineDetails> = RetrofitInstance.fdaApi.getMedicineDetails(id)
+                if (response.isSuccessful) {
+                    val details = response.body()
+                    binding.medicineName.text = details?.name
+                    binding.useCases.text = details?.uses
+                    binding.sideEffects.text = details?.sideEffects?.joinToString(", ")
+                } else {
+                    Log.e("MedicineDetailsFragment", "Error fetching details: ${response.errorBody()}")
+                }
             } catch (e: Exception) {
-                // Handle error
+                Log.e("MedicineDetailsFragment", "Error fetching medicine details: ${e.message}")
             }
         }
     }

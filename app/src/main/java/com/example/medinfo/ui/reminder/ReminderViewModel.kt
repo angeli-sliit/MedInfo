@@ -9,9 +9,7 @@ import com.example.medinfo.model.ReminderRepository
 import com.example.medinfo.model.ReminderDatabase
 import kotlinx.coroutines.launch
 
-
 class ReminderViewModel(application: Application) : AndroidViewModel(application) {
-
     private val repository: ReminderRepository
     val allReminders: LiveData<List<Reminder>>
 
@@ -26,6 +24,6 @@ class ReminderViewModel(application: Application) : AndroidViewModel(application
     }
 
     fun delete(reminder: Reminder) = viewModelScope.launch {
-        repository.delete(reminder) // Call the delete method in the repository
+        repository.delete(reminder)
     }
 }

@@ -1,4 +1,5 @@
 package com.example.medinfo.ui.userprofile
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -14,7 +15,8 @@ class UserProfileFragment : Fragment() {
     private lateinit var viewModel: UserprofileViewModel
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentUserProfileBinding.inflate(inflater, container, false)

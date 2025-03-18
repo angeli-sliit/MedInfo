@@ -1,19 +1,19 @@
 <menu xmlns:tools="http://schemas.android.com/tools"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/navigation_home"
+            android:checkable="true"
+            android:enabled="true"
+            android:title="Home"
+            android:visible="true" />
     <item
-        android:id="@+id/action_bb"
-        android:icon="@drawable/mmmmmjpg"
-        android:showAsAction="always"
-        tools:ignore="AlwaysShowAction,AppCompatResource,MenuTitle" />
-    <item
-        android:id="@+id/action_menu"
-        android:icon="@drawable/fi_rs_menu_burger"
-        android:showAsAction="always"
-        tools:ignore="AlwaysShowAction,AppCompatResource,MenuTitle" />
+        android:id="@+id/navigation_search"
+        android:title="Search"/>
     <item
         android:id="@+id/action_sign_out"
         android:showAsAction="always"
         android:title="@string/sign_out"
         tools:ignore="AppCompatResource" />
+    </group>
 </menu>

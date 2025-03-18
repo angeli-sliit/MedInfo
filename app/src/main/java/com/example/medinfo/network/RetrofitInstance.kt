@@ -1,22 +1,31 @@
 package com.example.medinfo.network
 
 import retrofit2.Retrofit
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitInstance {
-    private const val BASE_URL = "https://api.fda.gov/"
+    private const val FDA_BASE_URL = "https://api.fda.gov/"
+    private const val RX_BASE_URL = "https://rxnav.nlm.nih.gov/"
 
-    private val retrofit by lazy {
+    private val fdaRetrofit by lazy {
         Retrofit.Builder()
-            .baseUrl(BASE_URL)
+            .baseUrl(FDA_BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
 
-    val api: MedicineService by lazy {
-        retrofit.create(MedicineService::class.java)
+    private val rxRetrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(RX_BASE_URL)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    val fdaApi: MedicineService by lazy {
+        fdaRetrofit.create(MedicineService::class.java)
+    }
+
+    val rxApi: MedicineService by lazy {
+        rxRetrofit.create(MedicineService::class.java)
     }
 }

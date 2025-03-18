@@ -1,5 +1,6 @@
 package com.example.medinfo.ui.reminder
 
+import AddReminderDialogFragment
 import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
